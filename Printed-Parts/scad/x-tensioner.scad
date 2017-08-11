@@ -12,7 +12,7 @@ idler_pos = 30.25 - 30;
 module x_tensioner(){
   difference(){
     union(){
-      translate(v=[0,0,31/2]) rotate([90,0,0]) x_end_belt_hole(31, -0.45);
+      translate(v=[0,0,31/2]) rotate([90,0,0]) x_end_belt_hole(31, -0.35);
       translate(v=[0,shift,box_size/2]) cube(size = [18,rodX_distance()+12,box_size], center = true);
     }
 
