@@ -62,8 +62,8 @@ thinwall = 3;
 bearing_size = bearing_diameter + 2 * thinwall;
 
 module vertical_bearing_base(){
- translate(v=[-2-bearing_size/4,0,29]) cube(size = [4+bearing_size/2,bearing_size,58], center = true);
- cylinder(h = 58, r=bearing_size/2, $fn = 90);
+ translate(v=[-2-bearing_size/4,0,23]) cube(size = [4+bearing_size/2,bearing_size,46], center = true);
+ cylinder(h = 46, r=bearing_size/2, $fn = 90);
 }
 
 module vertical_bearing_holes(){

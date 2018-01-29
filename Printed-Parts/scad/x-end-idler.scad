@@ -15,7 +15,7 @@ module x_end_idler_holes(){
     //translate(v=[0,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=2.2, $fn=30);
     //translate(v=[1.5,-22,30.25]) rotate(a=[0,-90,0]) cylinder(h = 10, r=3.6, $fn=30);
     //translate(v=[-21.5,-22,30.25]) rotate(a=[0,-90,0]) rotate(a=[0,0,30]) cylinder(h = 80, r=3.6, $fn=6);
-    translate(v=[-5.5-10+0.5,0,30]) x_end_belt_hole(22, -0.8);    
+    translate(v=[-5.5-10+0.5-2.5,0,30]) x_end_belt_hole(22, -0.8);    
 // }
 }
 
@@ -60,9 +60,9 @@ module x_end_idler(){
         x_end_idler_base();
         //waste_pocket();
         // Bottom pushfit rod
-        translate(v=[-15,-21.5,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
+        translate(v=[-15-2.5,-21.5,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
         // Top pushfit rod
-        translate(v=[-15,-21.5, rodX_distance()+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
+        translate(v=[-15-2.5,-21.5, rodX_distance()+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 
     }
     

@@ -10,13 +10,13 @@ use <polyholes.scad>
 
 function rodX_distance() = 45;
 
-function rodZ_distance() = 21;
-//function rodZ_distance() = 17; 
+//function rodZ_distance() = 21;
+function rodZ_distance() = 17; 
 
 module x_end_base(){
   // Main block
   height = 58;
-  translate(v=[-15,-9,height/2]) cube(size = [17,39,height], center = true);
+  translate(v=[-15-2.5,-9,height/2]) cube(size = [17,39,height], center = true);
   // Bearing holder
    vertical_bearing_base();	
   //Nut trap
@@ -43,18 +43,19 @@ module x_end_holes(){
  // Belt hole
   translate(v=[-1,0,0]){
     // Stress relief
-    translate(v=[-5.5-10+1.5,-10-1,30]) cube(size = [18,1,28], center = true);
-    translate(v=[-5.5-10+1.5,-10,30]) x_end_belt_hole();
+    translate(v=[-5.5-10+1.5-2.5,-10-1,30]) cube(size = [18,1,28], center = true);
+    translate(v=[-5.5-10+1.5-2.5,-10,30]) x_end_belt_hole();
   }
 
 // Bottom pushfit rod
-translate(v=[-15,-41.5,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
+translate(v=[-15-2.5,-41.5,6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 // Top pushfit rod
-translate(v=[-15,-41.5,rodX_distance()+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
+translate(v=[-15-2.5,-41.5,rodX_distance()+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,50);
 
 // TR Nut trap
    // Hole for the nut
     translate(v=[0,-rodZ_distance(), -1]) poly_cylinder(h = 9.01, r = 5.3, $fn = 25);
+    translate(v=[0,-rodZ_distance(), 46]) poly_cylinder(h = 12.01, r = 13, $fn = 40);
 
 // Screw holes for TR nut
     translate(v=[0,-rodZ_distance(), 0]) rotate([0, 0, -135]) translate([0, 8, -1]) cylinder(h = 10, r = 1.55, $fn=25);
@@ -63,9 +64,9 @@ translate(v=[-15,-41.5,rodX_distance()+6]) rotate(a=[-90,0,0]) pushfit_rod(7.8,5
 // Nut traps for TR nut screws
     translate(v=[0,-rodZ_distance(), 0]) rotate([0, 0, -135]) translate([0, 8, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.3, $fn=6);
 
-    translate(v=[0,-rodZ_distance(), 0]) rotate([0, 0, -135]) translate([0, -8, 6]) rotate([0, 0, 0])cylinder(h = 3, r = 3.2, $fn=6);
-    //#translate([-5.5,-22.2,6]) rotate([0,0,30]) cube([5,5,3]);
-    //#translate([-0,-22.2,6]) rotate([0,0,60]) cube([5,10,3]);
+    translate(v=[0,-rodZ_distance(), 0]) rotate([0, 0, -135]) translate([0, -8, 6]) rotate([0, 0, 30])cylinder(h = 3, r = 3.2, $fn=6);
+    translate([-5,-17.7,6]) rotate([0,0,30]) cube([5,5,3]);
+    translate([-0,-17.7,6]) rotate([0,0,60]) cube([5,6,3]);
 }
 
 

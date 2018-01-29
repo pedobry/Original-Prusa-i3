@@ -1,7 +1,7 @@
 
 use <x-end.scad>
 
-idler_screw = 3; //M4 or M3 screw
+idler_screw = 4; //M4 or M3 screw
 idler_width = 10.3;
 idler_diameter = 15.2;
 box_size = 14;
